@@ -67,7 +67,8 @@ def execute(cmd, abort = True):
             raise Exception(message)
         else:
             logging.error(message)
-    return (status, stdout.rstrip('\n'), stderr.rstrip('\n'))
+    return (status, stdout, stderr)
+    
 
 def split_var_name_and_array_reference(var_name):
     """Split an expression like foo(:,a,1:ddt%ngas)
